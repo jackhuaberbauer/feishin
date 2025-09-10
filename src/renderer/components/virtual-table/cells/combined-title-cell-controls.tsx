@@ -29,7 +29,7 @@ export const ListCoverControls = ({
         e.preventDefault();
         e.stopPropagation();
 
-        if (context.queueContext) {
+        if (context.queueContextType) {
             handlePlayQueueAdd?.({
                 byItemType: {
                     id: [context.contextId],
