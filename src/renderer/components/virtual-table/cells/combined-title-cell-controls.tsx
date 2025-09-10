@@ -36,7 +36,7 @@ export const ListCoverControls = ({
                     type: context.queueContextType,
                 },
                 initialSongId: itemData.id,
-                playType: playButtonBehavior,
+                playType: playType || playButtonBehavior,
             });
         } else {
             handlePlayQueueAdd?.({
