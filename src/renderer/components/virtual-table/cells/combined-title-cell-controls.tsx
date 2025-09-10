@@ -29,13 +29,24 @@ export const ListCoverControls = ({
         e.preventDefault();
         e.stopPropagation();
 
-        handlePlayQueueAdd?.({
-            byItemType: {
-                id: [itemData.id],
-                type: itemType,
-            },
-            playType: playType || playButtonBehavior,
-        });
+        if (context.queueContext) {
+            handlePlayQueueAdd?.({
+                byItemType: {
+                    id: [context.contextId],
+                    type: context.queueContextType,
+                },
+                initialSongId: itemData.id,
+                playType: playButtonBehavior,
+            });
+        } else {
+            handlePlayQueueAdd?.({
+                byItemType: {
+                    id: [itemData.id],
+                    type: itemType,
+                },
+                playType: playType || playButtonBehavior,
+            });
+        }
     };
 
     const handlePlayFromQueue = () => {

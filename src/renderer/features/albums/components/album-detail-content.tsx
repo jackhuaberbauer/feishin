@@ -447,10 +447,12 @@ export const AlbumDetailContent = ({ background, tableRef }: AlbumDetailContentP
                         autoHeight
                         columnDefs={columnDefs}
                         context={{
+                            contextId: detailQuery?.data?.id,
                             currentSong,
                             isFocused,
                             itemType: LibraryItem.SONG,
                             onCellContextMenu,
+                            queueContextType: LibraryItem.ALBUM,
                             status,
                         }}
                         enableCellChangeFlash={false}

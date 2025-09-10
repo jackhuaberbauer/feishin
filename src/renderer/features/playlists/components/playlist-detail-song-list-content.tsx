@@ -296,10 +296,12 @@ export const PlaylistDetailSongListContent = ({ songs, tableRef }: PlaylistDetai
                     autoFitColumns={page.table.autoFit}
                     columnDefs={columnDefs}
                     context={{
+                        contextId: detailQuery?.data?.id,
                         currentSong,
                         isFocused,
                         itemType: LibraryItem.SONG,
                         onCellContextMenu: handleContextMenu,
+                        queueContextType: LibraryItem.PLAYLIST,
                         status,
                     }}
                     getRowId={(data) => data.data.uniqueId}
